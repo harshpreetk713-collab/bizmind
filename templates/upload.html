@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Data | BizMind</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #172554;
+        }
+
+        header {
+            background: #101b36;
+            color: white;
+            padding: 22px 7%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 55px auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(20,40,80,.07);
+        }
+
+        .drop-area {
+            margin-top: 25px;
+            padding: 45px 20px;
+            border: 2px dashed #8ba7d8;
+            border-radius: 12px;
+            text-align: center;
+            background: #f8faff;
+        }
+
+        input {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2457d6;
+            color: white;
+            border: 0;
+            padding: 13px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1742ad;
+        }
+
+        .note {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        a {
+            color: #2457d6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        BizMind | Connect • Analyse • Grow
+    </header>
+
+    <main>
+        <div class="panel">
+
+            <h1>Upload Business Data</h1>
+
+            <p>
+                Upload your business sales records
+                to generate meaningful insights.
+            </p>
+
+            <form action="/upload" method="POST"
+                  enctype="multipart/form-data">
+
+                <div class="drop-area">
+
+                    <h3>Select your business file</h3>
+
+                    <p class="note">
+                        Supported formats: CSV and Excel (.xlsx)
+                    </p>
+
+                    <input
+                        type="file"
+                        name="file"
+                        accept=".csv,.xlsx"
+                        required
+                    >
+
+                    <br>
+
+                    <button type="submit">
+                        Upload and Analyse
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p class="note">
+                <a href="/dashboard">← Back to Dashboard</a>
+            </p>
+
+        </div>
+    </main>
+
+</body>
+</html>
