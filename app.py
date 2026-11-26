@@ -1,4 +1,4 @@
-
+import os
 from flask import Flask, render_template, request, session
 import pandas as pd
 from io import BytesIO
@@ -7,8 +7,7 @@ import uuid
 from azure_storage import upload_to_azure
 
 app = Flask(__name__)
-app.secret_key = "bizmind-demo-secret-key"
-
+app.secret_key = os.environ.get("SECRET_KEY", "bizmind-demo-secret-key")
 REQUIRED_COLUMNS = [
     "Date", "Product", "Category",
     "Quantity", "Revenue", "Expenses"
